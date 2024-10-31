@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Elevator System State Chart">
+    <mxGraphModel dx="1377" dy="780" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- Initial State -->
+        <mxCell id="2" value="" style="ellipse;shape=doubleEllipse;fillColor=black;" vertex="1" parent="1">
+          <mxGeometry x="120" y="100" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Idle State -->
+        <mxCell id="3" value="Idle" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="85" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Transition to Idle -->
+        <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="2" target="3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Send Request State -->
+        <mxCell id="5" value="Passenger Request" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="85" width="150" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Transition to Send Request -->
+        <mxCell id="6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="3" target="5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Normal or Emergency Order -->
+        <mxCell id="7" value="Select Destination / Emergency" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="85" width="180" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Transition to Normal/Emergency -->
+        <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5" target="7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Order Confirmation -->
+        <mxCell id="9" value="Elevator Confirmation" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="185" width="160" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Transition to Order Confirmation -->
+        <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7" target="9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Dispatch Order -->
+        <mxCell id="11" value="Move to Destination / Emergency Mode" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="510" y="285" width="210" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Transition to Dispatch Order -->
+        <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="9" target="11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Final State (Success) -->
+        <mxCell id="13" value="" style="ellipse;shape=doubleEllipse;fillColor=black;" vertex="1" parent="1">
+          <mxGeometry x="750" y="300" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Transition to Final State -->
+        <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="11" target="13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Final State (Failure) -->
+        <mxCell id="15" value="Failure" style="ellipse;fillColor=red;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="285" width="100" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Transition to Failure -->
+        <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="7" target="15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

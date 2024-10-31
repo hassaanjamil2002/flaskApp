@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>View Portfolio</title>
+    <style>
+        .user-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .user-card:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .profile-picture {
+            width: 100px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .skills {
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/create-portfolio">Create Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/view-portfolio">View Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h1 class="text-center">Portfolio View</h1>
+        
+        <!-- Search Form -->
+        <form method="POST" action="/view-portfolio" class="mt-4">
+            <div class="form-group">
+                <input type="email" name="search_email" placeholder="Enter Email to Search" class="form-control" required>
+                <button type="submit" class="btn btn-primary mt-2">Search</button>
+            </div>
+        </form>
+
+        {% if users %}
+            {% for user in users %}
+            <div class="user-card">
+                {% if user.profile_picture %}
+                    <img src="{{ user.profile_picture }}" alt="Profile Picture" class="profile-picture">
+                {% else %}
+                    <div class="profile-picture" style="background-color: #ddd; width: 100px; height: 100px; border-radius: 50%;"></div>
+                {% endif %}
+                <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+                <p class="bio">{{ user.bio }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Phone:</strong> {{ user.phone }}</p>
+                <p class="skills"><strong>Skills and Expertise:</strong> {{ user.skills }}</p>
+                <p><strong>Online Profiles:</strong> <a href="{{ user.online_profiles }}">{{ user.online_profiles }}</a></p>
+            </div>
+            {% endfor %}
+        {% else %}
+            <div class="alert alert-warning mt-3">No user found with that email.</div>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
