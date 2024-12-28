@@ -1,0 +1,24 @@
+Flask==2.3.2
+Flask-WTF==1.1.1
+Flask-SQLAlchemy==3.0.5
+Flask-Migrate==4.0.4
+Flask-Login==0.6.2
+Flask-Bcrypt==1.0.1
+gunicorn==21.2.0
+
+# For linting and code formatting
+flake8==6.1.0
+black==23.12.0
+
+# For testing
+pytest==7.4.2
+pytest-flask==2.1.0
+coverage==7.3.1
+
+# Database driver (e.g., for PostgreSQL or MySQL)
+psycopg2-binary==2.9.8  # For PostgreSQL
+# mysql-connector-python==8.1.0  # Uncomment if using MySQL
+
+# Additional utilities (add/remove as needed)
+requests==2.31.0
+python-dotenv==1.0.0
