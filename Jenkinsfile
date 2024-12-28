@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        // Define environment variables (if needed)
         VENV = "venv"  // Virtual environment folder
         APP_DIR = "flaskApp"  // App directory after cloning
     }
@@ -19,20 +18,21 @@ pipeline {
             steps {
                 echo 'Setting up Python virtual environment and installing dependencies...'
                 bat '''
-                python -m venv venv
-                venv\\Scripts\\activate
+                python -m venv %VENV%
+                call %VENV%\\Scripts\\activate
                 pip install -r requirements.txt
+                deactivate
                 '''
-                
             }
         }
 
         stage('Run Unit Tests') {
             steps {
                 echo 'Running unit tests...'
-                sh '''
-                source ${VENV}/bin/activate
+                bat '''
+                call %VENV%\\Scripts\\activate
                 pytest
+                deactivate
                 '''
             }
         }
@@ -47,9 +47,9 @@ pipeline {
         stage('Deploy Application') {
             steps {
                 echo 'Deploying the application...'
-                sh '''
-                source ${VENV}/bin/activate
-                python app.py &
+                bat '''
+                call %VENV%\\Scripts\\activate
+                python app.py
                 '''
             }
         }
@@ -58,9 +58,9 @@ pipeline {
     post {
         always {
             echo 'Cleaning up workspace...'
-            sh '''
-            deactivate || true
-            rm -rf ${VENV}
+            bat '''
+            call %VENV%\\Scripts\\deactivate || echo "No active environment to deactivate"
+            rmdir /s /q %VENV%
             '''
         }
         success {
