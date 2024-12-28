@@ -11,7 +11,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning repository...'
-                git 'https://github.com/hassaanjamil2002/flaskApp.git'
+                git branch: 'main', url: 'https://github.com/hassaanjamil2002/flaskApp.git'
             }
         }
 
