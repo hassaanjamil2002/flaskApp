@@ -1,0 +1,16 @@
+2024-12-28 14:49:27,654 - WARNING -  * Debugger is active!
+2024-12-28 14:49:27,666 - INFO -  * Debugger PIN: 122-711-905
+2024-12-28 14:49:36,524 - INFO - 127.0.0.1 - - [28/Dec/2024 14:49:36] "GET /create-portfolio HTTP/1.1" 200 -
+2024-12-28 14:49:45,846 - INFO - All portfolios viewed
+2024-12-28 14:49:45,849 - INFO - 127.0.0.1 - - [28/Dec/2024 14:49:45] "GET /view-portfolio HTTP/1.1" 200 -
+2024-12-28 14:49:46,072 - INFO - 127.0.0.1 - - [28/Dec/2024 14:49:46] "[33mGET /"D:/Semester%207/SSD%20Lab/Mid/uploads/jujutsu-kaisen-anime-4k-dy.jpg" HTTP/1.1[0m" 404 -
+2024-12-28 14:49:46,103 - INFO - 127.0.0.1 - - [28/Dec/2024 14:49:46] "[33mGET /asdasd HTTP/1.1[0m" 404 -
+2024-12-28 14:49:53,550 - INFO - 127.0.0.1 - - [28/Dec/2024 14:49:53] "GET /create-portfolio HTTP/1.1" 200 -
+2024-12-28 14:50:10,244 - INFO - Portfolio created for user: nawfal@gmail.com (Name: sadsad Jamil)
+2024-12-28 14:50:10,244 - INFO - 127.0.0.1 - - [28/Dec/2024 14:50:10] "POST /create-portfolio HTTP/1.1" 200 -
+2024-12-28 14:50:21,880 - INFO - 127.0.0.1 - - [28/Dec/2024 14:50:21] "GET /create-portfolio HTTP/1.1" 200 -
+2024-12-28 14:50:28,157 - INFO - Portfolio created for user: hassaan@gmail.com (Name: sadsad Jamil)
+2024-12-28 14:50:28,158 - INFO - 127.0.0.1 - - [28/Dec/2024 14:50:28] "POST /create-portfolio HTTP/1.1" 200 -
+2024-12-28 15:02:26,791 - INFO -  * Detected change in 'D:\\Semester 7\\SSD Lab\\Mid\\app.py', reloading
+2024-12-28 15:02:28,161 - WARNING -  * Debugger is active!
+2024-12-28 15:02:28,165 - INFO -  * Debugger PIN: 122-711-905
